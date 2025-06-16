@@ -25,3 +25,17 @@ CREATE TABLE borrows (
     borrowed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     returned_at TIMESTAMP
 );
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE admins (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
